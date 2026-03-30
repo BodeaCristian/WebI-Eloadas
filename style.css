@@ -1,0 +1,22 @@
+body {
+    background: white;
+    margin: 0;
+    color: #222;
+}
+
+header {
+    background: linear-gradient(90deg, #1a4a2e, #2d7a4f);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    margin: 0 12px;
+    font-weight: bold;
+}
