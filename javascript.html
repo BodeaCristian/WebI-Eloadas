@@ -19,7 +19,37 @@
             <a href="axios.html">Axios CRUD</a>
         </nav>
     </header>
+    <div class="container mt-5">
+        <p id="crudMessage" class="text-success"></p>
+        <h3 class="mb-3">Mozi CRUD (JavaScript)</h3>
+        <form onsubmit="event.preventDefault();onFormSubmit();">
+            <input type="hidden" name="id" id="id">
+            <div class="input-group mb-2">
+                <input class="form-control" type="text" name="nev" id="nev" placeholder="mozi neve">
+                <input class="form-control" type="text" name="varos" id="varos" placeholder="varos">
+                <input class="form-control" type="number" name="ferohely" id="ferohely" min="1" placeholder="ferohely">
+                <button class="btn btn-primary" type="submit" id="submitBtn">Add</button>
+            </div>
+            <label class="validation-error hide" id="nevValidationError">A nev, varos es ferohely megadasa kotelezo.</label>
+        </form>
 
+        <table class="table table-bordered" id="mozilista">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Mozi neve</th>
+                    <th>Varos</th>
+                    <th>Ferohely</th>
+                    <th width="150">Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="scriptcrud.js"></script>
+    <footer>
+        <p>Bodea Cristian | HPWI6J ### Horváth Bence | YXCVAE</p>
+    </footer>
 </body>
 
 </html>
