@@ -16,6 +16,7 @@
             <a href="javascript.html">Javascript CRUD</a>
             <a href="react.html">React CRUD</a>
             <a href="fetchapi.html">Fetch CRUD</a>
+            <a href="axios.html">Axios CRUD</a>
         </nav>
     </header>
     <div class="container mt-5">
@@ -27,7 +28,9 @@
                 <input class="form-control" type="text" name="nev" id="nev" placeholder="mozi neve">
                 <input class="form-control" type="text" name="varos" id="varos" placeholder="varos">
                 <input class="form-control" type="number" name="ferohely" id="ferohely" min="1" placeholder="ferohely">
+                <button class="btn btn-primary" type="submit" id="submitBtn">Add</button>
             </div>
+            <label class="validation-error hide" id="nevValidationError">A nev, varos es ferohely megadasa kotelezo.</label>
         </form>
 
         <table class="table table-bordered" id="mozilista">

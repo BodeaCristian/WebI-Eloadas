@@ -22,6 +22,8 @@ async function fetchMozi() {
                 <td>${mozi.varos}</td>
                 <td>${mozi.ferohely}</td>
                 <td>
+                    <button type="button" class="btn btn-warning btn-sm me-1" onClick="onEdit(${mozi.id})">Edit</button>
+                    <button type="button" class="btn btn-danger btn-sm" onClick="onDelete(${mozi.id})">Delete</button>
                 </td>
             </tr>`;
     });
@@ -53,6 +55,7 @@ function resetForm() {
     document.getElementById("nev").value = "";
     document.getElementById("varos").value = "";
     document.getElementById("ferohely").value = "";
+    document.getElementById("submitBtn").textContent = "Add";
 }
 
 async function onFormSubmit() {
@@ -84,7 +87,7 @@ function onEdit(id) {
     document.getElementById("nev").value = mozi.nev;
     document.getElementById("varos").value = mozi.varos;
     document.getElementById("ferohely").value = mozi.ferohely;
-
+    document.getElementById("submitBtn").textContent = "Update";
 }
 
 async function onDelete(id) {

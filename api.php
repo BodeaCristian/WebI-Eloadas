@@ -24,5 +24,32 @@ switch ($method) {
           echo json_encode(['status' => 'Create error!']);
         }
         break;
+    case 'PUT':
+        try {
+            $data = json_decode(file_get_contents("php://input"), true);
+        $stmt = $pdo->prepare("UPDATE mozi SET nev=?, varos=?, ferohely=? WHERE id=?");
+        $stmt->execute([$data['nev'], $data['varos'], (int)$data['ferohely'], $data['id']]);
+            echo json_encode(['status' => 'Update success!']);
+        }
+        catch(PDOException $e) {
+          echo json_encode(['status' => 'Update error!']);
+        }
+        break;
 
+    case 'DELETE':
+        try {
+            $data = json_decode(file_get_contents("php://input"), true);
+
+            $deleteEloadasStmt = $pdo->prepare("DELETE FROM eloadas WHERE moziid=?");
+            $deleteEloadasStmt->execute([$id]);
+
+            $stmt = $pdo->prepare("DELETE FROM mozi WHERE id=?");
+            $stmt->execute([$data['id']]);
+
+            echo json_encode(['status' => 'Delete success!']);
+        }
+        catch(PDOException $e) {
+          echo json_encode(['status' => 'Delete error!']);
+        }
+        break;
 }
