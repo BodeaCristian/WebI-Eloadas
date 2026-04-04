@@ -35,7 +35,14 @@ const App = () => {
         setMozis([...mozis, mozi]);
     };
 
+    const deleteMozi = (id) => {
+        setEditing(false);
+        setMozis(mozis => mozis.filter((mozi) => mozi.id !== id));
+    };
 
+    const editRow = (mozi) => {
+        setEditing(true);
+        setCurrentMozi(mozi);
     };
 
     const updateMozi = (id, updatedMozi) => {

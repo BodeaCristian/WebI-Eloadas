@@ -62,7 +62,7 @@ function printArray() {
         var cell4 = newRow.insertCell(3);
         cell4.innerHTML = array1[i].ferohely;
         var cell5 = newRow.insertCell(4);
-        cell5.innerHTML = '<button type="button" class="btn-sm me-1" onClick="onEdit(' + i + ')">Edit</button>' + '<button type="button" class="btn-sm" onClick="onDelete(' + i + ')">Delete</button>';
+        cell5.innerHTML = '<button type="button" class="btn btn-warning btn-sm me-1" onClick="onEdit(' + i + ')">Edit</button>' + '<button type="button" class="btn btn-danger btn-sm" onClick="onDelete(' + i + ')">Delete</button>';
 
     }
 }
